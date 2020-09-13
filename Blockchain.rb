@@ -2,7 +2,7 @@ require_relative 'block'
 
 class Blockchain
   attr_reader :blocks, :index
-  def initialize(difficulty = 4)
+  def initialize(difficulty = 1)
     @blocks = [Block.new]
     @index = 1
     @difficulty = difficulty
