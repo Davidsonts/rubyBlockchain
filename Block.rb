@@ -2,7 +2,7 @@ require 'digest'
 
 class Block
   attr_reader :index, :previousHash, :data, :timestamp, :hash
-  def initialize(index = 0, previousHash = nil, data = 'Genesis block', difficulty = 4)
+  def initialize(index = 0, previousHash = nil, data = 'Genesis block', difficulty = 1)
     @index = index
     @previousHash = previousHash
     @data = data

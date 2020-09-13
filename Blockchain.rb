@@ -2,9 +2,10 @@ require_relative 'block'
 
 class Blockchain
   attr_reader :blocks, :index
-  def initialize
+  def initialize(difficulty = 4)
     @blocks = [Block.new]
     @index = 1
+    @difficulty = difficulty
   end
 
   def getLastBlock
@@ -13,7 +14,7 @@ class Blockchain
 
   def addBlock(data)
     previousHash = self.getLastBlock.hash
-    block = Block.new(@index, previousHash, data)
+    block = Block.new(@index, previousHash, data, @difficulty)
     @index +=1 
     @blocks.push(block)
     return previousHash
